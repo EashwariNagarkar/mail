@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #email {
+            background-color: gray;
+            font-size: 25px;
+            text-align: left;
+
+        }
+        #email input {
+            height: 25px;
+        }
+        #to{
+            height: 10px;
+
+        }
+        #Body{
+            resize: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="email">
+        <label for="To">To:</label><br>  
+        <input type="text" id="To"  placeholder="To" required />
+        <input type="text" id="CC" placeholder="CC">
+        <input type="text" id="BCC" placeholder="BCC" ><br>
+        <label for="To">Subject:</label>
+        <input type="text" id="Subject" placeholder="Subject" /><br>
+        <label for="To">Body:</label>
+        <textarea type="text" id="Body" ></textarea><br>
+        <input type="button" onclick="othername();"  value="submit " >
+        <a href="" id="mailtxt"></a>
+    <script>
+        
+
+        function othername() {
+            var To = document.getElementById("To").value;
+            var CC = document.getElementById("CC").value;
+            var BCC = document.getElementById("BCC").value;
+            var Subject = document.getElementById("Subject").value;
+            var Body = document.getElementById("Body").value;
+
+            var mailtxt = "mailto:" + To + "?cc=" + CC + "&bcc=" + BCC + "&subject=" + Subject + "email&body=" + Body ;
+
+            if (To == ""|| CC== "" || BCC == "" || Subject == "" ||Body=="") {
+    alert("All fields are necessary");
+    return false;
+  }
+           else{
+            document.getElementById("mailtxt").href = mailtxt;
+            document.getElementById("mailtxt").click();
+        }
+}
+            
+  
+    </script>
+    
+</div>
+</body>
+
+</html>
